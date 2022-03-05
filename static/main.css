@@ -1,0 +1,175 @@
+#page-title{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    color: #777986;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+#view-page-title{
+    padding-bottom:  10px;
+    color: #17408B;
+    font-weight: 700;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+body{
+    font-size: 12px;
+    font-family: Arial;
+    padding-bottom: 50px;
+}
+
+.cont-style{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+ul{
+    margin: 0px;
+}
+
+.navbar-style{
+    padding: 25px;
+    background-color: #17408B;
+}
+
+.header-style{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    padding-left: 10px;
+}
+
+.detail-style{
+    font-size: 16px;
+    color: white;
+    display: block;
+    font-family: Arial;
+    font-weight: 400;
+}
+
+.site-logo-style{
+    width: 40px;
+}
+
+.navbar-link-style{
+    font-size: 20px;
+    color: white;
+}
+
+.search-box-style{
+    border: solid 3px #C9082A;
+}
+
+.search-submit-style{
+    border: solid 3px #C9082A;
+    background-color: #C9082A;
+    color: white;
+}
+
+.edit-button-style{
+    border: solid 2px lightgray;
+    color: #777986;
+    float: right;
+    margin-top: 10px;
+}
+
+.search-submit-style:hover{
+    border: solid 3px white;
+    background-color: #17408B;
+}
+
+.player-cont-style{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+}
+
+.player-display-image-style{
+    border-radius: 25px;
+}
+
+.player-cont-style-2{
+    border-radius: 25px;
+    border: solid 2px lightgray;
+    padding-bottom: 10px;
+}
+
+.player-name-style{
+    color: #17408B;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.player-position-style{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.player-year-style{
+    font-size: 16px;
+    color: #777986;
+    text-align: center;
+}
+
+.player-detail-style{
+    font-size: 16px;
+    color: #777986;
+    font-weight: normal;
+}
+
+.player-team-style{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.view-description-style{
+    color: #777986;
+    font-size: 20px;
+    margin-top: -10px;
+    float: left;
+}
+
+.view-description-style-2{
+    color: lightgray;
+    font-size: 22px;
+    margin-top: 10px;
+    float: left;
+}
+
+.view-box-label{
+    color: white;
+    background-color: #17408B;
+    border: solid 3px #C9082A;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.view-image-style{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.view-summary-style{
+    font-weight: 700;
+    padding-top: 7px;
+    font-size: 14px;
+
+}
+
+.view-player-details-style{
+    font-weight: 700;
+    font-size: 22px;
+    margin-top: 10px;
+}

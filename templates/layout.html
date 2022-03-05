@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <title>NBA All-Stars</title>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+
+    <script>
+        let names = {{names|tojson}}
+    </script>
+  </head>
+
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-style">
+      <div class="container">
+            <a class="navbar-brand d-flex" href="/">
+              <img src="https://cdn.freebiesupply.com/images/large/2x/nba-logo-transparent.png" alt="NBA All-Stars Logo" class="site-logo-style">
+              <span class="header-style">NBA All-Stars<br><span class="detail-style">Learn all about NBA All-Star Basketball Players here!</span></span>
+            </a>
+          
+            <div class="navbar">
+              <a class="nav-link navbar-link-style" href="/">Home</a>
+              <a class="nav-link navbar-link-style" href="/add">Add Player</a>
+              <form class="form-inline my-2 my-lg-0" onSubmit="return false">
+                <input class="form-control mr-sm-2 search-box-style" placeholder="Search" id="search_box">
+                <button class="btn btn-outline-success my-2 my-sm-0 search-submit-style" type="button" id="search_button">Search</button>
+              </form>
+            </div>
+      </div>
+    </nav>
+
+
+    <div class="container">   
+        {% block content %}
+        {% endblock %}
+    </div>
+
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+
+    <script>
+      let years = {{years|tojson}}
+      let teams = {{teams|tojson}}
+    </script>
+
+    <div id="page-title">Add a new All-Star Player</div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="success-alert"></div>
+        </div>
+    </div>
+
+
+    <form class="needs-validation" novalidate>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="FirstName">First name</label>
+              <input type="text" class="form-control" id="first-name-input" placeholder="First name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="LastName">Last name</label>
+              <input type="text" class="form-control" id="last-name-input" placeholder="Last name" required>
+            </div>
+        </div>    
+    
+        <div class="form-group">
+          <label for="NBAPlayerImageUrl">Image URL</label>
+          <input type="url" class="form-control" id="image-url-input" placeholder="Image URL">
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="YearBorn">Year Born</label>
+              <input type="number" class="form-control" id="year-born-input" placeholder="Year Born" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="YearDrafted">Year Drafted by NBA</label>
+              <input type="number" class="form-control" id="nba-draft-input" placeholder="NBA Draft" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="College">College Attended</label>
+                <input type="text" class="form-control" id="college-input" placeholder="Please leave this field blank if None">
+              </div>
+        </div>    
+
+        <div class="form-group">
+          <label for="PlayerPosition">Position</label>
+          <select class="form-control" id="position-input">
+            <option>Point Guard</option>
+            <option>Shooting Guard</option>
+            <option>Power Forward</option>
+            <option>Small Forward</option>
+            <option>Center</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="TeamsPlayedFor">NBA Teams Played For</label>
+          <select multiple class="form-control" id="teams-input" size="10">
+            {% for team in teams %}
+              <option>{{team}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="NBAChampionsIn">Won NBA Championship In</label>
+          <select multiple class="form-control" id="nba-champion-input" size="10" required>
+            {% for year in years %}
+              <option>{{year}}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="PlayerBio">Short Bio</label>
+          <textarea class="form-control" id="bio-input" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="button" id="submit-btn">Submit form</button>
+      </form>
+
+
+{% endblock %}

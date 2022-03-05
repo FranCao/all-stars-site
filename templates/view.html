@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+
+    <script>
+        let player = {{player|tojson}}
+    </script>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="edit-button"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="view-page-title"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-1 view-description-style">Position</div>
+            <div class="col-md-4 view-description-style" id="position"></div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div id="image"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="view-description-style-2">Year Born</div>
+                <div class="view-description-style-2">Year Drafted by NBA</div>
+                <div class="view-description-style-2">College</div>
+                <div class="view-description-style-2">Won Championships In</div>
+                <div class="view-description-style-2">Teams Played For</div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="view-player-details-style" id="year-born"></div>
+                <div class="view-player-details-style" id="nba-draft"></div>
+                <div class="view-player-details-style" id="college"></div>
+                <div class="view-player-details-style" id="nba-champ"></div>
+                <div class="" id="team"></div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="view-description-style-2">Bio</div>
+                <br><br>
+                <div class="view-summary-style" id="summary"></div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

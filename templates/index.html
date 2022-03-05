@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'index.js') }}"></script>
+
+    <script>
+        let players = {{players|tojson}}
+    </script>
+
+    <div id="page-title">Most Popular NBA All-Star Players This Week:</div>
+
+    <div class="row" id="players">                
+    </div>
+
+{% endblock %}
