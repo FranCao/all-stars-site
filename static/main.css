@@ -154,6 +154,11 @@ ul{
     padding-bottom: 5px;
 }
 
+.view-box-label:hover{
+    background-color: #C9082A;
+    border: solid 3px #17408B;
+}
+
 .view-image-style{
     padding-top: 20px;
     padding-bottom: 10px;
@@ -184,10 +189,15 @@ ul{
     color: white;
     background-color: #17408B;
     border: solid 3px #C9082A;
-    font-size: 22px;
+    font-size: 19px;
     font-family: 'Roboto', sans-serif;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.view-box-label-small:hover{
+    background-color: #C9082A;
+    border: solid 3px #17408B;
 }

@@ -196,8 +196,8 @@ def index():
 @app.route('/search_results/<search_term>', methods=['GET', 'POST'])
 def search(search_term):
     global data
-
     results = []
+
     for player in data:
         full_name = player['first_name'] + ' ' + player['last_name']
         position = player['position'].lower()
@@ -212,7 +212,25 @@ def search(search_term):
         if search_term.lower() in full_name.lower() and player not in results:
             results.append(player)
 
-    return render_template('results.html', results=results, names=names, search_term=search_term)
+    return render_template('results.html', results=results, names=names, search_term=search_term, key=None)
+
+
+# Clickable Search based on key
+@app.route('/search/<key>/<search_term>', methods=['GET', 'POST'])
+def clickable_search(key, search_term):
+    global data
+    results = []
+
+    for player in data:
+        value = player[key]
+        try:
+            if search_term.lower() == value.lower():
+                results.append(player)
+        except: 
+            if search_term in value:
+                results.append(player)
+
+    return render_template('results.html', results=results, names=names, search_term=search_term, key=key)
 
 
 @app.route('/view/<id>', methods=['GET'])

@@ -1,3 +1,7 @@
+function search_key(key, value){
+    window.location.href="/search/" + key + "/" + value
+}
+
 $(document).ready(function() {
     
     let name = player['first_name'] + ' ' + player['last_name']
@@ -12,7 +16,9 @@ $(document).ready(function() {
 
     $("#year-born").append(player['year_born'])
     $("#nba-draft").append(player['nba_draft'])
-    $("#position").html('<span class="view-box-label"> ' + player['position'] + ' </span>')
+
+    let position = '<button class="view-box-label" type="button" id="position_clickable">' + player['position'] + '</button>'
+    $("#position").html(position)
 
     if (player['college']){
         $("#college").append(player['college'])
@@ -21,8 +27,12 @@ $(document).ready(function() {
     }
 
     $.each(player['team'], function(index, value){
-        let list = $('<div class="view-box-label-small">' + value + '</div>')
-        $("#team").append(list)
+        let team = '<button class="view-box-label-small" type="button" id="team_clickable">' + value + '</button>'
+        $("#team").append(team)
+        // Clickable teams
+        $("#team_clickable").click(function(){
+            search_key("team", value)
+        })
     })
 
     let champ_len = (player['nba_champion']).length
@@ -40,5 +50,11 @@ $(document).ready(function() {
     $("#edit_button").click(function(){
         window.location.href="/edit/" + player['id']
 	})
+
+    // Clickable position
+    $("#position_clickable").click(function(){
+        let value = player['position']
+        search_key("position", value)
+    })
 
 })
