@@ -6,7 +6,8 @@ $(document).ready(function() {
 
     $("#edit-button").html('<button class="btn btn-outline-success edit-button-style" type="button" id="edit_button">Edit Player</button>')
 
-    $("#image").append('<img class="view-image-style" src="' + player['image'] + '">')
+    let image = $('<img src="' + player['image'] + '" alt="' + name + '" class="view-image-style">')
+    $("#image").append(image)
     $("#summary").append(player['summary'])
 
     $("#year-born").append(player['year_born'])
@@ -20,9 +21,7 @@ $(document).ready(function() {
     }
 
     $.each(player['team'], function(index, value){
-        let list = $('<ul>')
-        let team = ('<li>' + value + '</li>')
-        list.append(team)
+        let list = $('<div class="view-box-label-small">' + value + '</div>')
         $("#team").append(list)
     })
 
